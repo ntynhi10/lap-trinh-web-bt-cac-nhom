@@ -21,14 +21,28 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-start pt-16 
-      bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617]">
+    <div className="
+      min-h-screen
 
-      <div className="w-full max-w-2xl px-4">
-        <Header count={notes.length} />
-        <NoteForm setNotes={setNotes} />
-        <NoteList notes={notes} deleteNote={deleteNote} />
+      bg-gray-100 text-black
+      dark:bg-gradient-to-br 
+      dark:from-[#0f172a] 
+      dark:via-[#111827] 
+      dark:to-[#020617]
+      dark:text-white
+    ">
+      
+      {/* HEADER FIXED */}
+      <Header count={notes.length} />
+
+      {/* CONTENT */}
+      <div className="flex justify-center pt-24 px-4">
+        <div className="w-full max-w-2xl">
+          <NoteForm setNotes={setNotes} />
+          <NoteList notes={notes} deleteNote={deleteNote} />
+        </div>
       </div>
+
     </div>
   )
 }

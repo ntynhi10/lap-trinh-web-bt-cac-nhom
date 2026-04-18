@@ -19,24 +19,32 @@ export default function NoteForm({ setNotes }) {
 
   return (
     <div className="flex gap-3 mb-6">
+      
       <input
         value={text}
-        onChange={e => setText(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
         placeholder="Nhập ghi chú mới..."
-        className="flex-1 px-4 py-3 rounded-xl 
-        bg-white/10 border border-white/20 
-        backdrop-blur text-white placeholder-gray-400 
-        outline-none"
+        className="
+          flex-1 px-4 py-3 rounded-xl border outline-none
+
+          bg-white border-gray-300 text-black placeholder-gray-500
+          dark:bg-white/10 dark:border-white/20 dark:text-white dark:placeholder-gray-400
+        "
       />
 
       <button
+        type="button"
         onClick={handleAdd}
-        className="px-5 py-3 rounded-xl 
-        bg-gradient-to-r from-purple-500 to-pink-500 
-        text-white font-medium hover:opacity-90"
+        className="
+          px-5 py-3 rounded-xl 
+          bg-gradient-to-r from-purple-500 to-pink-500 
+          text-white font-medium 
+          hover:opacity-90 transition
+        "
       >
         + Thêm
       </button>
+
     </div>
   )
 }
